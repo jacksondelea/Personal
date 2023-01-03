@@ -27,7 +27,6 @@ const LogoText = styled.span`
 
     &:hover{
     color: yellowgreen;
-    transform: scale(1.1);
   }
 `
 
@@ -41,9 +40,10 @@ const Right = styled.div`
 `
 
 const OptionText = styled.span`
+    margin-left: 50px;
+    font-size: 18px;
     &:hover{
         color: yellowgreen;
-        transform: scale(1.1);
   }
 `
 
