@@ -2,10 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
+    height: 100%;
     width: 500px;
-    height: 200px;
     display: flex;
-    border: 1px dotted yellowgreen;
+    background-color: white;
+    flex: 0 0 auto;
 `
 const Image = styled.img`
     height: 200px;
@@ -34,7 +35,7 @@ const Details = styled.span`
   color: black;
 `
 const ReadMoreButton = styled.span`
-  color: white;
+  color: black;
   font-size: 12px;
 `
 
