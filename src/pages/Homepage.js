@@ -6,6 +6,7 @@ import RecentProject from '../components/RecentProject';
 import Carousel from '../components/Carousel';
 import ProjectCarousel from '../components/ProjectCarousel';
 import { recentProjects } from '../data';
+import HomeInfo from '../components/HomeInfo';
 
 const Container = styled.div`
     background-color: rgba(3, 3, 3, 0.8);
@@ -16,7 +17,8 @@ const Homepage = () => {
     <Container>
         <Navbar/> 
         <Status/>
-        <Carousel/>
+        <Carousel/> 
+        <HomeInfo/>
     </Container>
   )
 }

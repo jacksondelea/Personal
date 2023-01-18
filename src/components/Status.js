@@ -23,18 +23,18 @@ const TextDiv = styled.div`
 
 const SemiBolded = styled.span`
     color: black;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 600;
 `
 
 const Project = styled.span`
     color: black;
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 600;
 
     &:hover{
     color: yellowgreen;
-    transform: scale(1.1);
+    cursor: pointer;  
   }
 `
 

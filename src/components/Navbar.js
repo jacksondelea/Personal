@@ -27,6 +27,7 @@ const LogoText = styled.span`
 
     &:hover{
     color: yellowgreen;
+    cursor: pointer;
   }
 `
 
@@ -44,10 +45,12 @@ const OptionText = styled.span`
     font-size: 18px;
     &:hover{
         color: yellowgreen;
+        cursor: pointer;
   }
 `
 
-const Navbar = () => {
+const Navbar = () => {  
+
   return (
     <Container>
         <Wrapper>
@@ -57,9 +60,10 @@ const Navbar = () => {
                 </LogoText>
             </Left>
             <Right >
-                <OptionText>Info</OptionText>
-                <OptionText>Info</OptionText>
-                <OptionText>Info</OptionText>
+                <OptionText>Music</OptionText>
+                <OptionText>Writing</OptionText>
+                <OptionText>Design</OptionText>
+                <OptionText>About</OptionText>
             </Right>
         </Wrapper>
     </Container>

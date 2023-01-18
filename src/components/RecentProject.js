@@ -2,15 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-    height: 100%;
-    width: 500px;
+    max-height: 200px;
+    max-width: 500px;
     display: flex;
-    background-color: white;
+    background-color: rgba(43,43,43,1);
     flex: 0 0 auto;
 `
 const Image = styled.img`
-    height: 200px;
-    width: 100%;
+    max-height: 200px;
+    max-width: 200px;
 `
 
 const Left = styled.div`
@@ -18,9 +18,7 @@ const Left = styled.div`
 `
 
 const Right = styled.div`
-  height: 160px;
-  width: 50%;
-  text-align: right;
+  text-align: left;
   margin: 20px;
   display: flex;
   flex-direction: column;
@@ -28,15 +26,22 @@ const Right = styled.div`
 `
 
 const Title = styled.h1`
-  color: black;
+  color: white;
+  font-size: 18px;
 `
 
 const Details = styled.span`
-  color: black;
+  color: white;
 `
 const ReadMoreButton = styled.span`
-  color: black;
+  color: yellowgreen;
   font-size: 12px;
+
+  &:hover{
+    cursor: pointer;
+    color: white;
+  }
+
 `
 
 const RecentProject = (props) => {
