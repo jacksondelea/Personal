@@ -2,8 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-    width: 1438px;
-    border: 1px dashed black;
+    border-bottom: .5px dashed black;
     flex-direction: column;
 `
 
@@ -13,21 +12,21 @@ const Bottom = styled.div`
 `
 
 const Top = styled.div`
-  padding: 30px;
+  padding: 20px;
   background-color: yellowgreen;
 `
 
 const Left = styled.div`
   width: 50%;
-  padding: 30px;
-  padding-left: 60px;
+  padding: 20px;
+  padding-left: 20px;
   display: flex;
   flex-direction: column;
 `
 
 const Right = styled.div`
   width: 50%;
-  padding: 30px;
+  padding: 10px;
   padding-right: 60px;
   display: flex;
   flex-direction: column;
@@ -40,11 +39,24 @@ const SemiBolded = styled.span`
   padding-bottom: 5px;
 `
 
-const Line = styled.span`
+const Bubble = styled.div`
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  height: 24px;
+  max-width: 150px;
+  margin: 5px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: black;
-  font-size: 18px;
-  font-weight: 400;
-  padding-bottom: 5px;
+  font-size: 14px;
+  padding: 5px;
+
+  &:hover{
+        cursor: pointer;
+        background-color: yellowgreen;
+  }
 `
 
 const HomeInfo = () => {
@@ -52,29 +64,21 @@ const HomeInfo = () => {
     <Container>
       <Bottom>
         <Left>
-          <Line>
-            I am a:
-          </Line>
-          <Line>
-            -Writer
-          </Line>
-          <Line>
-            -Designer
-          </Line>
-          <Line>
-            -Developer
-          </Line>
-          <Line>
-            -Musician
-          </Line>
-          <Line>
-            based in Providence, Rhode Island.  
-          </Line>
+          <Bubble>
+            Writing
+          </Bubble>
+          <Bubble>
+            Design
+          </Bubble>
+          <Bubble>
+            Development
+            </Bubble>
+          <Bubble>
+            Music
+          </Bubble>
         </Left>
         <Right>
-          <SemiBolded>
-            Skills
-          </SemiBolded>
+          
         </Right>
       </Bottom>
     </Container>

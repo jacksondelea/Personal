@@ -7,19 +7,20 @@ import Marquee from 'react-fast-marquee';
 const MetaContainer = styled.div`
   display: flex;
   max-height: 200px;
+  border-bottom: .5px dashed black;
+  width: 100%;
 `
 
 const MoreContainer = styled.div`
-  min-width: 300px;
   display: flex;
   justify-content: left;
   align-items: center;
-  padding-left: 30px;
+  padding: 10px;
   
 `
 
-const MoreButton = styled.h1`
-  color: yellowgreen;
+const MoreButton = styled.span`
+  color: black;
 
   &:hover{
     color: white;
@@ -37,7 +38,7 @@ const Carousel = () => {
             RECENT PROJECTS
           </MoreButton>
         </MoreContainer>
-        <Marquee pauseOnHover={true} gradientWidth={0} speed={65} ref={scrollerRef}>
+        <Marquee pauseOnHover={true} gradientWidth={0} speed={55} ref={scrollerRef}>
             {recentProjects.map((item) => (
                       <RecentProject item={item} key={item.title} />
                   ))}

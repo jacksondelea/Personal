@@ -2,15 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-    max-height: 200px;
-    max-width: 500px;
+    max-height: 120px;
+    max-width: 360px;
     display: flex;
     background-color: rgba(43,43,43,1);
     flex: 0 0 auto;
 `
 const Image = styled.img`
-    max-height: 200px;
-    max-width: 200px;
+    max-height: 120px;
+    max-width: 120px;
 `
 
 const Left = styled.div`
@@ -27,15 +27,15 @@ const Right = styled.div`
 
 const Title = styled.h1`
   color: white;
-  font-size: 18px;
+  font-size: 14px;
 `
 
-const Details = styled.span`
+const Details = styled.body`
   color: white;
 `
 const ReadMoreButton = styled.span`
   color: yellowgreen;
-  font-size: 12px;
+  font-size: 10px;
 
   &:hover{
     cursor: pointer;

@@ -8,8 +8,6 @@ const Container = styled.div`
 `
 
 const Wrapper = styled.div`
-    padding: 10px;
-    padding-left: 10px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -57,11 +55,11 @@ const Navbar = () => {
     <Container>
         <Wrapper>
             <Left>
-                <OptionText>Projects</OptionText>
+                <LogoText>
+                    Jackson Delea
+                </LogoText>
             </Left>
             <Right >
-                <OptionText>Index</OptionText>
-                <OptionText>Info</OptionText>
             </Right>
         </Wrapper>
     </Container>
