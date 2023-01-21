@@ -2,15 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-    max-height: 120px;
+    max-height: 84px;
     max-width: 360px;
     display: flex;
     background-color: rgba(43,43,43,1);
     flex: 0 0 auto;
 `
 const Image = styled.img`
-    max-height: 120px;
-    max-width: 120px;
+    max-height: 84px;
+    max-width: 84px;
 `
 
 const Left = styled.div`
@@ -19,15 +19,14 @@ const Left = styled.div`
 
 const Right = styled.div`
   text-align: left;
-  margin: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 `
 
 const Title = styled.h1`
   color: white;
-  font-size: 14px;
+  font-size: 12px;
 `
 
 const Details = styled.body`

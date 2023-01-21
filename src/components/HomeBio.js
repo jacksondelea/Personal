@@ -2,17 +2,18 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
+    border-bottom: 0.5px dashed black;
     display: flex;
     flex-direction: column;
-    height: 120px;
     align-items: center;
     justify-content: center;
-    padding: 12px;
 `
 
 const Paragraph = styled.div`
-    font-size: 18px;
     padding-bottom: 12px;
+    font-size: 12px;
+`
+const Link = styled.li`
 `
 
 const HomeBio = () => {
@@ -20,9 +21,6 @@ const HomeBio = () => {
     <Container>
         <Paragraph>
             Writer, designer, developer and musician based in Providence, Rhode Island.
-        </Paragraph>
-        <Paragraph>
-            He's interested in digitial technology, political economy, and ambience.
         </Paragraph>
     </Container>
   )

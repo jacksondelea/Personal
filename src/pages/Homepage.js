@@ -1,54 +1,131 @@
 import React from 'react';
 import styled from "styled-components";
 import Status from '../components/Status';
-import Navbar from '../components/Navbar';
-import RecentProject from '../components/RecentProject';
-import Carousel from '../components/Carousel';
-import ProjectCarousel from '../components/ProjectCarousel';
-import { recentProjects } from '../data';
-import HomeInfo from '../components/CatSelector';
 import Logo from '../components/Logo';
 import HomeBio from '../components/HomeBio';
+import Previously from '../components/Previously'
+import ProjectsButton from '../components/ProjectsButton'
+import DateCard from '../components/DateCard';
+import { useRef, useState } from 'react';
+import Carousel from '../components/Carousel';
+import Article from '../components/Article'
+import ProjectIndex from '../components/ProjectIndex';
 
+const TBContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  background-color: #d8d8d8;
+`
 
 const MetaContainer = styled.div`
+  height: 85vh;
+  width: 100vw;
   display: flex;
-  height: 100vh;
-  overflow: hidden;
-`
-
-const Left = styled.div`
-    background-color: #4b4b4b;
-    width: 722px;
-    overflow: hidden;
-    padding: 30px;
-`
-
-const Right = styled.div`
-  background-color: #4b4b4b;
-  width: 703px;
-  overflow: scroll;
-  padding: 30px;
 `
 
 const YellowStrip = styled.div`
   background-color: yellowgreen;
   height: 100vh;
   width: 15px;
+
+  position: fixed;
+  overflow: hidden;
 `
 
+const Top = styled.div`
+  height: 15vh;
+  display: flex;
+`
+
+const TopLeft = styled.div`
+  width: 315px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+`
+const TopCenter = styled.div`
+  width: 480px;
+  padding: 24px;
+  padding-top: 48px;
+`
+const TopRight = styled.div`
+  width: 480px;
+  padding: 24px;
+`
+
+const Left = styled.div`
+  width: 315px;
+  min-height: 85vh;
+  padding: 12px;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  overflow-y: hidden;
+`
+
+const Right = styled.div`
+  width: 480px;
+  padding: 24px;
+  min-height: 85vh;
+
+  overflow-y: auto;
+`
+
+const Center = styled.div`
+  width: 480px;
+  padding: 24px;
+  min-height: 85vh;
+
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+`
+
+
 const Homepage = () => {
+  const centerColumnRef = useRef(null);
+  const [selectedArticle, setSelectedArticle] = useState("");
+
+  const handleScrollButton = () => {
+    centerColumnRef.current.scrollBy({top: window.innerHeight, behavior: 'smooth'});
+  };
+
+  const handleArticleSelect = (article) => {
+    setSelectedArticle(article);
+  }
+
   return (
-    <MetaContainer>
-      <YellowStrip/>
-      <Left>
-          <Logo/> 
-      </Left>
-      <Right>
-        <HomeBio></HomeBio>
-        <Status></Status>
-      </Right>
-    </MetaContainer>
+      <TBContainer>
+        <Top>
+          <TopLeft>
+            <Logo></Logo>
+          </TopLeft>
+          <TopCenter>
+            jacksondelea@icloud.com
+          </TopCenter>
+          <TopRight>
+
+          </TopRight>
+        </Top>
+        <MetaContainer>
+          <Left>
+            <HomeBio></HomeBio>
+            <Status></Status>
+            <Previously></Previously>
+            <DateCard></DateCard>
+          </Left>
+          <Center ref={centerColumnRef} >
+            <ProjectsButton handleScrollButton={handleScrollButton}/>
+            <ProjectIndex handleArticleSelect={handleArticleSelect} />
+          </Center>
+          <Right>
+            <Article selectedArticle={selectedArticle} />
+          </Right>
+        </MetaContainer>
+      </TBContainer>
     )
 }
 
