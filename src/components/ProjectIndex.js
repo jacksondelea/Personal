@@ -28,6 +28,7 @@ const ProjectTitle = styled.div`
   margin-right: 16px;
   width: 400px;
   text-align: left;
+  cursor: pointer;
 `;
 
 const ProjectForm = styled.p`

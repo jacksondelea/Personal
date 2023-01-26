@@ -16,3 +16,14 @@ export const recentProjects = [
         description: "this is project 3"
     },
 ]
+
+export const bioText = [
+    {
+        par: "1",
+        text: "this is the bio text"
+    },
+    {
+        par: "2",
+        text: "this is the second bio text"
+    },
+]

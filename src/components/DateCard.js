@@ -2,10 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-    margin: 12px;
-    margin-bottom: 24px;
-    bottom: 0;
-    position: fixed;
+  z-index: 2;
+  padding-bottom: 24px;
+  bottom: 0;
+  position: fixed;
+  background-color: #d8d8d8;
 `
 
 const DateCard = () => {

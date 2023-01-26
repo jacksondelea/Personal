@@ -11,8 +11,6 @@ import Carousel from '../components/Carousel';
 import Article from '../components/Article'
 import ProjectIndex from '../components/ProjectIndex';
 import ExpInfo from '../components/ExpInfo';
-import Contact from '../components/Contact';
-
 
 const TBContainer = styled.div`
   display: flex;
@@ -20,6 +18,7 @@ const TBContainer = styled.div`
   position: fixed;
   height: 100vh;
   background-color: #d8d8d8;
+  cursor: default;
 `
 
 const MetaContainer = styled.div`
@@ -127,7 +126,7 @@ const Homepage = () => {
             <HomeBio></HomeBio>
             <Status></Status>
             <Previously></Previously>
-            <Contact></Contact>
+            <ExpInfo></ExpInfo>
             <DateCard></DateCard>
           </Left>
           <Center ref={centerColumnRef} >
