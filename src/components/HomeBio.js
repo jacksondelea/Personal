@@ -11,7 +11,6 @@ const Container = styled.div`
 
 const Paragraph = styled.div`
     padding-bottom: 12px;
-    font-size: 12px;
 `
 const Link = styled.li`
 `

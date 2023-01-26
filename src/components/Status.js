@@ -5,6 +5,8 @@ const Container = styled.div`
     border-bottom: 0.5px dashed black;
     display: flex;
     justify-content: space-between;
+    padding-top: 12px;
+    padding-bottom: 12px;
 `
 const Left = styled.div`
     width: 75%;
@@ -17,12 +19,6 @@ const Right = styled.div`
 `
 const TextDiv = styled.div`
     color: black;
-    font-size: 12px;
-
-    &:hover{
-    color: yellowgreen;
-    cursor: pointer;  
-  }
 `
 
 const HomeCarousel = () => {

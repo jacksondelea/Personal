@@ -6,7 +6,6 @@ const Container = styled.div`
     margin-bottom: 24px;
     bottom: 0;
     position: fixed;
-    font-size: 12px;
 `
 
 const DateCard = () => {

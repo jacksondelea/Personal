@@ -4,9 +4,7 @@ const ProjectIndexContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  min-height: 100vh;
-  margin-top: 240px;
+  min-height: 85vh;
 `;
 
 const CategoryContainer = styled.div`
@@ -15,7 +13,6 @@ const CategoryContainer = styled.div`
 `;
 
 const CategoryTitle = styled.h2`
-  font-size: 18px;
   font-weight: bold;
   margin-bottom: 8px;
 `;
@@ -23,23 +20,25 @@ const CategoryTitle = styled.h2`
 const ProjectContainer = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 8px;
 `;
 
 const ProjectTitle = styled.div`
-  font-size: 16px;
   margin-right: 16px;
+  width: 400px;
+  text-align: left;
 `;
 
 const ProjectForm = styled.p`
-  font-size: 16px;
   margin-right: 16px;
+  width: 100px;
+  text-align: right;
 `;
 
 const ProjectDate = styled.p`
-  font-size: 16px;
+  text-align: right;
+  width: 100px;
 `;
 
 const ProjectIndex = (props) => {
@@ -49,7 +48,6 @@ const ProjectIndex = (props) => {
     <ProjectIndexContainer>
       <CategoryContainer>
         <CategoryTitle>Writing</CategoryTitle>
-        <hr/>
         <ProjectContainer>
           <ProjectTitle onClick={() => handleArticleSelect("Article 1")}>Article 1</ProjectTitle>
           <ProjectForm>Form</ProjectForm>
@@ -68,7 +66,6 @@ const ProjectIndex = (props) => {
       </CategoryContainer>
       <CategoryContainer>
         <CategoryTitle>Design</CategoryTitle>
-        <hr/>
         <ProjectContainer>
           <ProjectTitle>Project</ProjectTitle>
           <ProjectForm>Form</ProjectForm>

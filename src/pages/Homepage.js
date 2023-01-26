@@ -10,6 +10,9 @@ import { useRef, useState } from 'react';
 import Carousel from '../components/Carousel';
 import Article from '../components/Article'
 import ProjectIndex from '../components/ProjectIndex';
+import ExpInfo from '../components/ExpInfo';
+import Contact from '../components/Contact';
+
 
 const TBContainer = styled.div`
   display: flex;
@@ -37,6 +40,7 @@ const YellowStrip = styled.div`
 const Top = styled.div`
   height: 15vh;
   display: flex;
+  
 `
 
 const TopLeft = styled.div`
@@ -45,23 +49,28 @@ const TopLeft = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 24px;
+  border: 1px black dashed;
 `
 const TopCenter = styled.div`
   width: 480px;
   padding: 24px;
   padding-top: 48px;
+  border: 1px black dashed;
+  text-transform: uppercase;
+
 `
 const TopRight = styled.div`
   width: 480px;
   padding: 24px;
+  border: 1px black dashed;
 `
 
 const Left = styled.div`
   width: 315px;
   min-height: 85vh;
-  padding: 12px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding: 24px;
+  border: 1px black dashed;
+  text-transform: uppercase;
 
   overflow-y: hidden;
 `
@@ -70,6 +79,7 @@ const Right = styled.div`
   width: 480px;
   padding: 24px;
   min-height: 85vh;
+  border: 1px black dashed;
 
   overflow-y: auto;
 `
@@ -78,10 +88,12 @@ const Center = styled.div`
   width: 480px;
   padding: 24px;
   min-height: 85vh;
+  border: 1px black dashed;
 
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  text-transform: uppercase;
 `
 
 
@@ -115,10 +127,10 @@ const Homepage = () => {
             <HomeBio></HomeBio>
             <Status></Status>
             <Previously></Previously>
+            <Contact></Contact>
             <DateCard></DateCard>
           </Left>
           <Center ref={centerColumnRef} >
-            <ProjectsButton handleScrollButton={handleScrollButton}/>
             <ProjectIndex handleArticleSelect={handleArticleSelect} />
           </Center>
           <Right>
