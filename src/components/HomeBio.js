@@ -19,7 +19,13 @@ const HomeBio = () => {
   return (
     <Container>
         <Paragraph>
-            Writer, designer, developer and musician based in Providence, Rhode Island.
+          Jackson Delea is a creative technologist, writer and musician. 
+        </Paragraph>
+        <Paragraph>
+          Informed by science fiction, metadata, hyperstition, and raving, his work collapses gaps between speculative futures and present(s). 
+        </Paragraph>
+        <Paragraph>
+          He is currently based between Providence, Rhode Island (United States) and the Interzone. 
         </Paragraph>
     </Container>
   )

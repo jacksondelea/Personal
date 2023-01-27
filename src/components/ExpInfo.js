@@ -2,13 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 import { useState } from 'react';
 import { bioText } from '../data';
+import HomeBio from './HomeBio';
+import Status from './Status'
 
 const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    margin-top: 12px;
 `
 
 const ExpInfo = () => {
@@ -27,34 +28,43 @@ const ExpInfo = () => {
     `
 
     const MenuIcon = styled.div`
-      color: #fff;
-      background-color: #2ecc71;
-      padding: 4px 8px;
-      border: none;
-      border-radius: 8px;
-      align-items: left;
+      align-items: center;
       justify-content: center;
       margin-bottom: 12px;
       cursor: pointer;
+
+      &:hover{
+        color: #2ecc71;
+        border: none;
+        border-radius: 2px;
+      }
     `;
 
     const Text = styled.div`
-      animation: typeOut 0.5s ease-in-out forwards;
-      @keyframes typeOut {
-        from {
-            width: 0%;
+      overflow: hidden;
+      margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+      letter-spacing: .15em;
+      animation: 
+        typing 0.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+        @keyframes typing {
+          from { width: 0 }
+          to { width: 100% }
         }
-        to {
-            width: 100%;
+        @keyframes blink-caret {
+          from, to { border-color: transparent }
+          50% { border-color: orange; }
         }
-    }
-    `
+      `
 
   return (
     <Container>
-        <MenuIcon onClick={toggleMenu}>{expanded ? '-' : '+'}</MenuIcon>
+        <MenuIcon onClick={toggleMenu}>{expanded ? '[-] Collapse' : '[+] Information'}</MenuIcon>
         <MenuContainer className={expanded ? 'expand' : ''}>
-          <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Text>
+          <Text>
+            <HomeBio></HomeBio>
+            <Status></Status>
+          </Text>
         </MenuContainer>
     </Container>
   )

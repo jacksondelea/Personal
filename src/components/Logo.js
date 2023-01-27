@@ -2,8 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-    align-items: center;
-    flex: 1;
+    align-items: flex-start;
     display: flex;
     justify-content: flex-start;
 `
@@ -13,10 +12,9 @@ const LogoText = styled.span`
     font-weight: 1000;
     font-size: 36px;
     letter-spacing: -5px;
-    
 
     &:hover{
-    color: yellowgreen;
+    color: #2ecc71;
     cursor: pointer;
   }
 `
