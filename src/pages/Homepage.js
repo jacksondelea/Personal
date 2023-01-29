@@ -1,16 +1,11 @@
 import React from 'react';
 import styled from "styled-components";
-import Status from '../components/Status';
 import Logo from '../components/Logo';
-import HomeBio from '../components/HomeBio';
-import Previously from '../components/Previously'
-import ProjectsButton from '../components/ProjectsButton'
 import DateCard from '../components/DateCard';
 import { useRef, useState } from 'react';
-import Carousel from '../components/Carousel';
-import Article from '../components/Article'
 import ProjectIndex from '../components/ProjectIndex';
 import ExpInfo from '../components/ExpInfo';
+import DisplaySelector from '../components/DisplaySelector';
 
 const TBContainer = styled.div`
   display: flex;
@@ -94,11 +89,7 @@ const Right = styled.div`
 
 const Homepage = () => {
   const centerColumnRef = useRef(null);
-  const [selectedArticle, setSelectedArticle] = useState("");
-
-  const handleScrollButton = () => {
-    centerColumnRef.current.scrollBy({top: window.innerHeight, behavior: 'smooth'});
-  };
+  const [selectedArticle, setSelectedArticle] = useState("Default");
 
   const handleArticleSelect = (article) => {
     setSelectedArticle(article);
@@ -123,10 +114,10 @@ const Homepage = () => {
             <DateCard></DateCard>
           </Left>
           <Center ref={centerColumnRef} >
-            <ProjectIndex handleArticleSelect={handleArticleSelect} />
+            <ProjectIndex handleArticleSelect={handleArticleSelect}/>
           </Center>
           <Right>
-            <Article selectedArticle={selectedArticle} />
+            <DisplaySelector selectedArticle={selectedArticle} />
           </Right>
         </MetaContainer>
       </TBContainer>

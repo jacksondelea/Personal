@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
+import { designProjects, writingProjects, musicProjects } from '../data'
 
 const ProjectIndexContainer = styled.div`
   display: flex;
@@ -33,16 +34,22 @@ const ProjectTitle = styled.div`
   cursor: pointer;
 `;
 
-const ProjectForm = styled.p`
-  margin-right: 16px;
-  width: 100px;
-  text-align: right;
-`;
-
 const ProjectDate = styled.p`
   text-align: right;
   width: 100px;
 `;
+
+const ProjectLine = (props) => {
+
+  const { item, handleArticleSelect } = props;
+
+  return (
+    <ProjectContainer onClick={() => {handleArticleSelect(item.id)}}>
+          <ProjectTitle>{item.title}</ProjectTitle>
+          <ProjectDate>{item.date}</ProjectDate>
+      </ProjectContainer>
+  )
+}
 
 const ProjectIndex = (props) => {
   const { handleArticleSelect } = props;
@@ -51,7 +58,7 @@ const ProjectIndex = (props) => {
 
   const toggleMenu = () => {
       setExpanded(!expanded);
-    }
+  }
 
   const MenuContainer = styled.div`
     display: ${expanded ? 'flex' : 'none'};
@@ -75,7 +82,7 @@ const ProjectIndex = (props) => {
       border: none;
       border-radius: 2px;
     }
-    `;
+  `;
 
   return (
     <ProjectIndexContainer>
@@ -83,39 +90,21 @@ const ProjectIndex = (props) => {
       <MenuContainer className={expanded ? 'expand' : ''}>
       <CategoryContainer>
         <CategoryTitle>Writing</CategoryTitle>
-          <ProjectContainer>
-            <ProjectTitle onClick={() => handleArticleSelect("Article 1")}>Article 1</ProjectTitle>
-            <ProjectForm>Form</ProjectForm>
-            <ProjectDate>Date</ProjectDate>
-          </ProjectContainer>
-          <ProjectContainer>
-            <ProjectTitle onClick={() => handleArticleSelect("Article 2")}>Article 2</ProjectTitle>
-            <ProjectForm>Form</ProjectForm>
-            <ProjectDate>Date</ProjectDate>
-          </ProjectContainer>
-          <ProjectContainer>
-            <ProjectTitle>Project</ProjectTitle>
-            <ProjectForm>Form</ProjectForm>
-            <ProjectDate>Date</ProjectDate>
-          </ProjectContainer>
+          {writingProjects.map((item) => (
+              <ProjectLine item={item} key={item.title} handleArticleSelect={handleArticleSelect}/>
+            ))}
         </CategoryContainer>
         <CategoryContainer>
           <CategoryTitle>Design</CategoryTitle>
-          <ProjectContainer>
-            <ProjectTitle>Project</ProjectTitle>
-            <ProjectForm>Form</ProjectForm>
-            <ProjectDate>Date</ProjectDate>
-          </ProjectContainer>
-          <ProjectContainer>
-            <ProjectTitle>Project</ProjectTitle>
-            <ProjectForm>Form</ProjectForm>
-            <ProjectDate>Date</ProjectDate>
-          </ProjectContainer>
-          <ProjectContainer>
-            <ProjectTitle>Project</ProjectTitle>
-            <ProjectForm>Form</ProjectForm>
-            <ProjectDate>Date</ProjectDate>
-          </ProjectContainer>
+            {designProjects.map((item) => (
+              <ProjectLine item={item} key={item.title} handleArticleSelect={handleArticleSelect} />
+            ))}
+        </CategoryContainer>
+        <CategoryContainer>
+          <CategoryTitle>Music</CategoryTitle>
+            {musicProjects.map((item) => (
+              <ProjectLine item={item} key={item.title} handleArticleSelect={handleArticleSelect} />
+            ))}
         </CategoryContainer>
       </MenuContainer>
     </ProjectIndexContainer>

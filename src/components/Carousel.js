@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { recentProjects } from '../data';
+import { writingProjects } from '../data';
 import RecentProject from './RecentProject';
 import Marquee from 'react-fast-marquee';
 
@@ -39,7 +39,7 @@ const Carousel = () => {
           </MoreButton>
         </MoreContainer>
         <Marquee pauseOnHover={true} gradientWidth={0} speed={55} ref={scrollerRef}>
-            {recentProjects.map((item) => (
+            {writingProjects.map((item) => (
                       <RecentProject item={item} key={item.title} />
                   ))}
         </Marquee>

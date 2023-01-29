@@ -22,7 +22,7 @@ const HomeBio = () => {
           Jackson Delea is a creative technologist, writer and musician. 
         </Paragraph>
         <Paragraph>
-          Informed by science fiction, metadata, hyperstition, and raving, his work collapses gaps between speculative futures and present(s). 
+          Informed by science fiction, metadata culture, hyperstition, and raving, his work collapses gaps between speculative futures and present(s). 
         </Paragraph>
         <Paragraph>
           He is currently based between Providence, Rhode Island (United States) and the Interzone. 
