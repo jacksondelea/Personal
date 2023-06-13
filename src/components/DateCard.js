@@ -11,7 +11,7 @@ const Container = styled.div`
 
 const DateCard = () => {
   return (
-    <Container>January 2023</Container>
+    <Container></Container>
   )
 }
 

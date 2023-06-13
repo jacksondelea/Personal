@@ -7,67 +7,39 @@ import ProjectIndex from '../components/ProjectIndex';
 import ExpInfo from '../components/ExpInfo';
 import DisplaySelector from '../components/DisplaySelector';
 
-const TBContainer = styled.div`
+const MetaContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  justify-content: center;
   background-color: #d8d8d8;
   cursor: default;
   overflow: hidden;
-`
-const MetaContainer = styled.div`
-  height: 85vh;
-  width: 100vw;
-  display: flex;
-`
-const YellowStrip = styled.div`
-  background-color: yellowgreen;
-  height: 100vh;
-  width: 15px;
-
   position: fixed;
-  overflow: hidden;
-`
+  width: 100%;
+  height: 100%;
+`;
+
 const Top = styled.div`
   height: 15vh;
   display: flex; 
-`
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
 const TopLeft = styled.div`
   width: 315px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 24px;
-  //border: 1px black dashed;
-`
-const Left = styled.div`
-  width: 315px;
-  min-height: 85vh;
-  padding: 24px;
-  //border: 1px black dashed;
-  text-transform: uppercase;
-
-  overflow-y: hidden;
-`
+`;
 const TopCenter = styled.div`
   width: 420px;
   padding: 24px;
   padding-top: 48px;
   display: flex;
   align-items: left;
-  //border: 1px black dashed;
-  text-transform: uppercase;
-`
-const Center = styled.div`
-  width: 420px;
-  padding: 24px;
-  min-height: 85vh;
-  //border: 1px black dashed;
-
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  text-transform: uppercase;
 `
 const TopRight = styled.div`
   width: 560px;
@@ -75,15 +47,36 @@ const TopRight = styled.div`
   padding-top: 48px;
   display: flex;
   align-items: right;
-  text-transform: uppercase;
-  //border: 1px black dashed;
 `
-const Right = styled.div`
-  width: 560px;
+const Bottom = styled.div`
+  height: 85vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+`;
+const Left = styled.div`
+  flex: 1;
+  padding: 24px;
+  overflow-y: hidden;
+`
+const Center = styled.div`
+  width: 600px;
   padding: 24px;
   min-height: 85vh;
-  //border: 1px black dashed;
-
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+`
+const Right = styled.div`
+  flex: 1;
+  padding: 24px;
+  min-height: 85vh;
   overflow-y: scroll;
 `
 
@@ -96,32 +89,27 @@ const Homepage = () => {
   }
 
   return (
-      <TBContainer>
-        <Top>
-          <TopLeft>
-            <Logo></Logo>
-          </TopLeft>
-          <TopCenter>
-            jacksondelea@icloud.com
-          </TopCenter>
-          <TopRight>
-            
-          </TopRight>
-        </Top>
-        <MetaContainer>
-          <Left>
-            <ExpInfo></ExpInfo>
-            <DateCard></DateCard>
-          </Left>
-          <Center ref={centerColumnRef} >
-            <ProjectIndex handleArticleSelect={handleArticleSelect}/>
-          </Center>
-          <Right>
-            <DisplaySelector selectedArticle={selectedArticle} />
-          </Right>
-        </MetaContainer>
-      </TBContainer>
-    )
+    <MetaContainer>
+      <Top>
+        <TopLeft>
+          <Logo />
+        </TopLeft>
+        <TopCenter />
+        <TopRight />
+      </Top>
+      <Bottom>
+        <Left>
+          <ExpInfo />
+        </Left>
+        <Center ref={centerColumnRef}>
+          <ProjectIndex handleArticleSelect={handleArticleSelect}/>
+        </Center>
+        <Right>
+          <DisplaySelector selectedArticle={selectedArticle} />
+        </Right>
+      </Bottom>
+    </MetaContainer>
+  )
 }
 
 export default Homepage

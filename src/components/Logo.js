@@ -12,6 +12,7 @@ const LogoText = styled.span`
     font-weight: 1000;
     font-size: 36px;
     letter-spacing: -5px;
+    min-width: 100%;
 
     &:hover{
     color: #2ecc71;
@@ -25,7 +26,7 @@ const Navbar = () => {
   return (
     <Container>
         <LogoText>
-            Jackson  Delea
+            Jackson    Delea
         </LogoText>
     </Container>
   )

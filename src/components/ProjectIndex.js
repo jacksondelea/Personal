@@ -20,35 +20,42 @@ const CategoryTitle = styled.h2`
   margin-bottom: 8px;
 `;
 
-const ProjectContainer = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-`;
-
-const ProjectTitle = styled.div`
-  margin-right: 16px;
-  width: 400px;
-  text-align: left;
-  cursor: pointer;
-`;
-
-const ProjectDate = styled.p`
-  text-align: right;
-  width: 100px;
-`;
-
 const ProjectLine = (props) => {
 
   const { item, handleArticleSelect } = props;
 
-  return (
-    <ProjectContainer onClick={() => {handleArticleSelect(item.id)}}>
-          <ProjectTitle>{item.title}</ProjectTitle>
-          <ProjectDate>{item.date}</ProjectDate>
-      </ProjectContainer>
-  )
+  const ProjectLineContainer = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    border-radius: 8px;
+    
+    &:hover{
+    background-color: black;
+    color: #2ecc71;
+    };
+  `
+
+  const ProjectTitle = styled.div`
+    margin-right: 16px;
+    text-align: left;
+    cursor: pointer;
+    padding-left: 8px;
+  `
+
+  const ProjectDate = styled.p`
+    text-align: right;
+    padding-right: 8px;
+  `
+
+    return (
+      <ProjectLineContainer onClick={() => {handleArticleSelect(item.id)}}>
+            <ProjectTitle>{item.title}</ProjectTitle>
+            <ProjectDate>{item.date}</ProjectDate>
+        </ProjectLineContainer>
+    )
 }
 
 const ProjectIndex = (props) => {
@@ -82,22 +89,22 @@ const ProjectIndex = (props) => {
       border: none;
       border-radius: 2px;
     }
-  `;
+  `
 
   return (
     <ProjectIndexContainer>
       <MenuIcon onClick={toggleMenu}>{expanded ? '[-] Collapse' : '[+] Projects'}</MenuIcon>
       <MenuContainer className={expanded ? 'expand' : ''}>
-      <CategoryContainer>
+        <CategoryContainer>
+            <CategoryTitle>Design</CategoryTitle>
+              {designProjects.map((item) => (
+                <ProjectLine item={item} key={item.title} handleArticleSelect={handleArticleSelect} />
+              ))}
+          </CategoryContainer>
+        <CategoryContainer>
         <CategoryTitle>Writing</CategoryTitle>
           {writingProjects.map((item) => (
               <ProjectLine item={item} key={item.title} handleArticleSelect={handleArticleSelect}/>
-            ))}
-        </CategoryContainer>
-        <CategoryContainer>
-          <CategoryTitle>Design</CategoryTitle>
-            {designProjects.map((item) => (
-              <ProjectLine item={item} key={item.title} handleArticleSelect={handleArticleSelect} />
             ))}
         </CategoryContainer>
         <CategoryContainer>
@@ -108,7 +115,7 @@ const ProjectIndex = (props) => {
         </CategoryContainer>
       </MenuContainer>
     </ProjectIndexContainer>
-  );
+  )
 }
 
 export default ProjectIndex;

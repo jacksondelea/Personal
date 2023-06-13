@@ -25,12 +25,12 @@ const HomeCarousel = () => {
   return (
     <Container>
         <Left>
-            <TextDiv>currently:</TextDiv>       
-            <TextDiv>Brown University [BA]</TextDiv>         
+            <TextDiv>Contact:</TextDiv>       
+            <TextDiv>jacksondelea@icloud.com</TextDiv>         
         </Left>
         <Right>
-            <TextDiv>.</TextDiv>       
-            <TextDiv>2023</TextDiv>
+            <TextDiv></TextDiv>       
+            <TextDiv></TextDiv>
         </Right>
     </Container>
   )

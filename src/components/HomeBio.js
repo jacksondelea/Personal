@@ -5,28 +5,32 @@ const Container = styled.div`
     border-bottom: 0.5px dashed black;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     justify-content: center;
 `
 
 const Paragraph = styled.div`
     padding-bottom: 12px;
-`
-const Link = styled.li`
+    text-align: left;
 `
 
 const HomeBio = () => {
   return (
     <Container>
-        <Paragraph>
-          Jackson Delea is a creative technologist, writer and musician. 
-        </Paragraph>
-        <Paragraph>
-          Informed by science fiction, metadata culture, hyperstition, and raving, his work collapses gaps between speculative futures and present(s). 
-        </Paragraph>
-        <Paragraph>
-          He is currently based between Providence, Rhode Island (United States) and the Interzone. 
-        </Paragraph>
+      <Paragraph>
+        Designer, artist and researcher.
+      </Paragraph>
+      <Paragraph>
+        I hold a BA in English from Brown University. I'm interested in interfaces, artificial intelligence, 
+        and computational culture.
+        I have experience in the music industry, 
+        education, and graphic design. 
+      </Paragraph>
+      <Paragraph>
+        I currently work with Forensic Architecture as an engineer,
+        artist and researcher for an upcoming exhibition on 
+        surveillance technology.
+      </Paragraph>
     </Container>
   )
 }

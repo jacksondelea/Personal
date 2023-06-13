@@ -1,8 +1,19 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const Container = styled.div`
+
+`
+const Title = styled.h1`
+`
+
+const SlideShow = styled.div``
 
 const DesignPage = () => {
   return (
-    <div>DesignPage</div>
+    <Container>
+      Hello
+    </Container>
   )
 }
 
